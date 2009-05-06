@@ -1,7 +1,26 @@
 # coding=gbk
 ####configuration begin####
-account_name="fangjiansoft@gmail.com"
-account_password="1234567"
+import ConfigParser
+import sys, os
+         
+pathname = os.path.dirname(sys.argv[0])        
+full_path= os.path.abspath(pathname)
+full_path_name=os.path.join(full_path,'config.ini')
+
+config = ConfigParser.RawConfigParser()
+config.read(full_path_name)
+
+if(not config.has_section('ACCOUNT')):
+    account_name=raw_input("开心网用户名:")
+    account_password=raw_input("开心网密码:")
+    config.add_section('ACCOUNT')
+    config.set('ACCOUNT', 'account_name', account_name)
+    config.set('ACCOUNT', 'account_password', account_password)
+    with open(full_path_name, 'wb') as configfile:
+        config.write(configfile)
+else:
+    account_name = config.get('ACCOUNT', 'account_name')
+    account_password = config.get('ACCOUNT', 'account_password')
 ####configuration end####
 import urllib2
 opener=urllib2.build_opener(urllib2.HTTPCookieProcessor())
@@ -27,6 +46,12 @@ for line in f:
     if(line.find(r'FlashVars')>=0):
         break
 
+#没找到参数,说明登陆失败
+if(line.find(r'FlashVars')<0):
+    print "登陆失败,请检查config.ini中的用户名和密码"
+    sys.exit(-1)
+    
+#解析参数
 l=line.split(',')
 l1=l[1]
 param=l1[2:-1]  #remove ' at two ends
@@ -43,7 +68,7 @@ for p in plist:
 #getconf function
 #http://www.kaixin001.com/!house/!garden/getconf.php?verify=13814301_1062_13814301_1241613391_54fc24f1c895e2e23fd07e9ad4a4c734&fuid=1230242&r=0.06616138247773051
 def getConf(uid):
-    print param
+    #print param
     url="/!house/!garden/getconf.php?"
     url+=("verify=%s" % pdict['verify'])
     url+=("&fuid=%s" % uid)
@@ -52,7 +77,7 @@ def getConf(uid):
     url+=("&r=%s" % r)
     req = urllib2.Request(url=host+url)
     f = urllib2.urlopen(req)
-    print "GET "+url
+    #print "GET "+url
     print f.msg
     document=f.read()
     #print f.read()
@@ -98,6 +123,12 @@ def isMature(info):
     else:
         return False
 
+import re
+def removeTag(xmlstr):
+    regex = "<(.|\n)*?>"
+    result = re.sub(regex,'',xmlstr)
+    return result
+    
 def havest(uid,document):
     dom = xml.dom.minidom.parseString(document)
     ac=dom.getElementsByTagName('account')[0]
@@ -112,7 +143,7 @@ def havest(uid,document):
         if(1==int(status) and int(cropsid)>0):
             fname=getTagText(farm,'name')
             crops=getTagText(farm,'crops')
-            print fname,crops
+            print fname,removeTag(crops)
             #havest
             url="/!house/!garden/havest.php?"
             url+=("verify=%s" % pdict['verify'])
