@@ -1,7 +1,7 @@
 # coding=gbk
 ####configuration begin####
-account_name="qffj@hotmail.com"
-account_password="fangkaixin"
+account_name="fangjiansoft@gmail.com"
+account_password="1234567"
 ####configuration end####
 import urllib2
 opener=urllib2.build_opener(urllib2.HTTPCookieProcessor())
