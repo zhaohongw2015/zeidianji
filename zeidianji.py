@@ -112,12 +112,17 @@ def getTagText(root, tag):
 
 
 
-
-def isMature(info):
-    if(info.find("已偷")>0):
+hostname=""
+def isMature(info,farm_info):
+    if(info.find("已偷")>0):  #已偷完,已偷光
         return False
-    if(info.find("不能偷")>0):
+    if(info.find("能偷")>0):  #再过X小时能偷
         return False
+    if(farm_info.find("爱心地")>0): #爱心地
+        if(farm_info.find(hostname)>0):
+            return True
+        else:
+            return False
     if(info.find("剩余")>0):
         return True
     else:
@@ -143,6 +148,7 @@ def havest(uid,document):
         if(1==int(status) and int(cropsid)>0):
             fname=getTagText(farm,'name')
             crops=getTagText(farm,'crops')
+            farm_info=getTagText(farm,'farm')
             print fname,removeTag(crops)
             #havest
             url="/!house/!garden/havest.php?"
@@ -152,16 +158,17 @@ def havest(uid,document):
             r=random.random()
             url+="&seedid=0"
             url+=("&farmnum=%s" % farmnum)
-            if (isMature(crops)):
-                print "试图收一下..."
+            if (isMature(crops,farm_info)):
+                print "下手..."
                 req = urllib2.Request(url=host+url)
                 f = urllib2.urlopen(req)
                 #print "GET "+url
                 #print f.msg
                 print f.read().decode('utf-8').encode('gbk')
+    return name
 
 #收自家园子的菜
-havest(0,document)
+hostname=havest(0,document)
 
 #查看谁家的菜熟了
 #GET /!house/!garden/getfriendmature.php?verify=13814301_1062_13814301_1241613391_54fc24f1c895e2e23fd07e9ad4a4c734&r=0.5315156443975866 HTTP/1.1
@@ -177,8 +184,9 @@ f = urllib2.urlopen(req)
 import json
 m=f.read()
 j=json.loads(m)
+shares=j['share']
 friends=j['friend']
-for friend in friends:
+for friend in (shares+friends):
     uid=friend['uid']
     realname=friend['realname']
     print uid,realname
