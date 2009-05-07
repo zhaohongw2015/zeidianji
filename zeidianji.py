@@ -58,6 +58,9 @@ param=l1[2:-1]  #remove ' at two ends
 print param
 #param='verify=13814301_1062_13814301_1241615280_1f83fcd2117fd3aca6bbe7da595cf4c0&wwwhost=www.kaixin001.com&roomid=8710&roomsnum=2&fuid=0'
 
+#取得主人id
+hostid=param[param.find('='):param.find('_')]
+
 #03.2 split parameter
 plist=param.split('&')
 pdict={}
@@ -116,7 +119,7 @@ hostname=""
 def isMature(info,farm_info):
     if(info.find("已偷")>0):  #已偷完,已偷光
         return False
-    if(info.find("能偷")>0):  #再过X小时能偷
+    if(info.find("可偷")>0):  #再过X小时可偷
         return False
     if(farm_info.find("爱心地")>0): #爱心地
         if(farm_info.find(hostname)>0):
@@ -167,6 +170,7 @@ def havest(uid,document):
                 print f.read().decode('utf-8').encode('gbk')
     return name
 
+
 #收自家园子的菜
 hostname=havest(0,document)
 
@@ -192,6 +196,45 @@ for friend in (shares+friends):
     print uid,realname
     document=getConf(uid)
     havest(uid,document)
+
+
+#POST http://www.kaixin001.com/house/garden/friend_ajax.php
+#verify	13814301_1062_13814301_1241712870_736ebb3ad5a6f64f8f1564cad3887b63
+#fuid	0
+#r	99589709
+def getNeighbour(uid):
+    #print param
+    url="/house/garden/friend_ajax.php"
+    c=("verify=%s" % pdict['verify'])
+    c+=("&fuid=%s" % uid)
+    #Math.round((Math.random()) * 100000000)
+    import random
+    r=random.random()
+    r=int(r*100000000)
+    c+=("&r=%s" % r)
+    req = urllib2.Request((host+url),c)
+    f = urllib2.urlopen(req)
+    #print "GET "+url
+    print f.msg
+    document=f.read()
+    #print document
+    return document
+
+'''
+#所有种菜的人
+n=getNeighbour(0)
+import json
+j=json.loads(n)
+nbs={}
+while(not nbs.has_key(j['fuid'])):
+    nbs[j['fuid']]=j
+    n=getNeighbour(j['nextuid'])
+    j=json.loads(n)
+    
+#打印所有种菜的人
+for k in nbs:
+    print k,nbs[k]['frealname']
+'''
 
 
 
