@@ -21,6 +21,15 @@ if(not config.has_section('ACCOUNT')):
 else:
     account_name = config.get('ACCOUNT', 'account_name')
     account_password = config.get('ACCOUNT', 'account_password')
+
+
+if(config.has_section('GARDEN')):
+    seedid_blacklist = config.get('GARDEN', 'seedid_blacklist')
+    seedid_blacklist = seedid_blacklist.split(',')
+else:
+    seedid_blacklist=[]
+
+    
 ####configuration end####
 import urllib2
 opener=urllib2.build_opener(urllib2.HTTPCookieProcessor())
@@ -116,7 +125,9 @@ def getTagText(root, tag):
 
 
 hostname=""
-def isMature(info,farm_info):
+def isMature(info,farm_info,seedid):
+    if seedid in seedid_blacklist: #黑名单上的不偷
+        return False 
     if(info.find("已偷")>0):  #已偷完,已偷光
         return False
     if(info.find("可偷")>0):  #再过X小时可偷
@@ -152,6 +163,7 @@ def havest(uid,document):
             fname=getTagText(farm,'name')
             crops=getTagText(farm,'crops')
             farm_info=getTagText(farm,'farm')
+            seedid=getTagText(farm,'seedid')
             print fname,removeTag(crops)
             #havest
             url="/!house/!garden/havest.php?"
@@ -161,7 +173,7 @@ def havest(uid,document):
             r=random.random()
             url+="&seedid=0"
             url+=("&farmnum=%s" % farmnum)
-            if (isMature(crops,farm_info)):
+            if (isMature(crops,farm_info,seedid)):
                 print "下手..."
                 req = urllib2.Request(url=host+url)
                 f = urllib2.urlopen(req)
