@@ -147,13 +147,16 @@ def removeTag(xmlstr):
     regex = "<(.|\n)*?>"
     result = re.sub(regex,'',xmlstr)
     return result
-    
+
+   
 def havest(uid,document):
     dom = xml.dom.minidom.parseString(document)
     ac=dom.getElementsByTagName('account')[0]
     name=getTagText(ac,'name')
     print "进入%s的花园..." % name
     farms=dom.getElementsByTagName('item')
+    stat_all=0
+    stat_succ=0
     for farm in farms:
         status = getTagText(farm,'status')
         cropsid = getTagText(farm,'cropsid')
@@ -174,17 +177,26 @@ def havest(uid,document):
             url+="&seedid=0"
             url+=("&farmnum=%s" % farmnum)
             if (isMature(crops,farm_info,seedid)):
-                print "下手..."
+                print "下手..."           
                 req = urllib2.Request(url=host+url)
                 f = urllib2.urlopen(req)
+                stat_all+=1
                 #print "GET "+url
                 #print f.msg
-                print f.read().decode('utf-8').encode('gbk')
-    return name
+                #检查是否成功
+                info=f.read()
+                dom = xml.dom.minidom.parseString(info)
+                data=dom.getElementsByTagName('data')[0]
+                ret=getTagText(data,'ret')
+                if(ret.find('succ')>0):
+                    stat_succ+=1
+                print info.decode('utf-8').encode('gbk')
+    return fname,stat_all,stat_succ
 
 
 #收自家园子的菜
-hostname=havest(0,document)
+hostname=havest(0,document)[0]
+
 
 #查看谁家的菜熟了
 #GET /!house/!garden/getfriendmature.php?verify=13814301_1062_13814301_1241613391_54fc24f1c895e2e23fd07e9ad4a4c734&r=0.5315156443975866 HTTP/1.1
@@ -202,12 +214,18 @@ m=f.read()
 j=json.loads(m)
 shares=j['share']
 friends=j['friend']
+stat_all,stat_succ=0,0
 for friend in (shares+friends):
     uid=friend['uid']
     realname=friend['realname']
     print uid,realname
     document=getConf(uid)
-    havest(uid,document)
+    result=havest(uid,document)
+    stat_all+=result[1]
+    stat_succ+=result[2]
+stat_fail=stat_all-stat_succ
+print '共下手%d次,得手%d次,失手%d次。得手率：%d%%' % (stat_all,stat_succ,stat_fail,(stat_succ*100/stat_all))
+
 
 
 #POST http://www.kaixin001.com/house/garden/friend_ajax.php
