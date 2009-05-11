@@ -22,4 +22,4 @@
   # 下载zeidianji.py,http://zeidianji.googlecode.com/files/zeidianji.py 直接双击运行.
 
 
-  # 如果您需要进一步的定制功能,请下载config.ini,和zeidianji.py放在同一目录中.用记事本打开config.ini,把
+  # 如果您需要进一步的定制功能,例如免偷列表功能.请下载config.ini,和zeidianji.py放在同一目录中.打开config.ini,在"account_name="后填上您的开心网用户名,在"account_password="后填上您的开心网密码.
