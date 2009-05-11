@@ -15,9 +15,5 @@
   # 安装Python2.6 (_已安装的同学可以跳过这步_)
     * Windows 用户可直接点击[http://www.python.org/ftp/python/2.6/python-2.6.msi Windows x86 MSI Installer (2.6)] 
     * 其它用户可以在Python2.6官方页面找到安装程序:http://www.python.org/download/releases/2.6/
-
-
   # 下载zeidianji.py,http://zeidianji.googlecode.com/files/zeidianji.py 直接双击运行.
-
-
   # 如果您需要进一步的定制功能,例如免偷列表功能.请下载config.ini,和zeidianji.py放在同一目录中.打开config.ini,在"account_name="后填上您的开心网用户名,在"account_password="后填上您的开心网密码.
