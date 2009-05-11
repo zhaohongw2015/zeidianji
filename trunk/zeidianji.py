@@ -225,7 +225,7 @@ for friend in (shares+friends):
     stat_succ+=result[2]
 stat_fail=stat_all-stat_succ
 print '共下手%d次,得手%d次,失手%d次。得手率：%d%%' % (stat_all,stat_succ,stat_fail,(stat_succ*100/stat_all))
-
+os.system("pause")
 
 
 #POST http://www.kaixin001.com/house/garden/friend_ajax.php
