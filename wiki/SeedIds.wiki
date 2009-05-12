@@ -1,14 +1,52 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
-<wiki:video url="http://img.kaixin001.com.cn//i2/house/garden/crop/xiangjiao.swf"/>
+ || 小白菊 || http://img.kaixin001.com.cn//i2/house/garden/crop3/xiaobaiju.swf || 67 || 
+ || 牧草 || http://img.kaixin001.com.cn//i2/house/garden/crop3/gouweiba.swf || 63 || 
+ || 水稻 || http://img.kaixin001.com.cn//i2/house/garden/crop1/shuidao.swf || 36 || 
+ || 胡萝卜 || http://img.kaixin001.com.cn//i2/house/garden/crop/huluobo.swf || 1 || 
+ || 大白菜 || http://img.kaixin001.com.cn//i2/house/garden/crop/dabaicai.swf || 2 || 
+ || 土豆 || http://img.kaixin001.com.cn//i2/house/garden/crop/tudou.swf || 3 || 
+ || 牵牛花 || http://img.kaixin001.com.cn//i2/house/garden/crop/qianniuhua.swf || 4 || 
+ || 蒲公英 || http://img.kaixin001.com.cn//i2/house/garden/crop3/pugongying.swf || 66 || 
+ || 高粱 || http://img.kaixin001.com.cn//i2/house/garden/crop2/gaoliang.swf || 51 || 
+ || 黄瓜 || http://img.kaixin001.com.cn//i2/house/garden/crop/huanggua.swf || 5 || 
+ || 辣椒 || http://img.kaixin001.com.cn//i2/house/garden/crop/lajiao.swf || 6 || 
+ || 玉米 || http://img.kaixin001.com.cn//i2/house/garden/crop/yumi.swf || 7 || 
+ || 茉莉花 || http://img.kaixin001.com.cn//i2/house/garden/crop1/moli.swf || 38 || 
+ || 豆角 || http://img.kaixin001.com.cn//i2/house/garden/crop/doujiao.swf || 8 || 
+ || 茄子 || http://img.kaixin001.com.cn//i2/house/garden/crop/qiezi.swf || 10 || 
+ || 菠菜 || http://img.kaixin001.com.cn//i2/house/garden/crop/bocai.swf || 27 || 
+ || 薰衣草 || http://img.kaixin001.com.cn//i2/house/garden/crop2/xunyicao.swf || 56 || 
+ || 番茄 || http://img.kaixin001.com.cn//i2/house/garden/crop/fanqie.swf || 11 || 
+ || 向日葵 || http://img.kaixin001.com.cn//i2/house/garden/crop/xiangrikui.swf || 9 || 
+ || 油菜花 || http://img.kaixin001.com.cn//i2/house/garden/crop2/youcaihua0.swf || 48 || 
+ || 芦荟 || http://img.kaixin001.com.cn//i2/house/garden/crop2/luhui.swf || 49 || 
+ || 桃子 || http://img.kaixin001.com.cn//i2/house/garden/crop2/taozi0.swf || 37 || 
+ || 棉花 || http://img.kaixin001.com.cn//i2/house/garden/crop3/mianhua.swf || 64 || 
+ || 香蕉 || http://img.kaixin001.com.cn//i2/house/garden/crop/xiangjiao.swf || 12 || 
+ || 杨梅 || http://img.kaixin001.com.cn//i2/house/garden/crop1/yangmei.swf || 40 || 
+ || 海棠 || http://img.kaixin001.com.cn//i2/house/garden/crop3/haitang.swf || 68 || 
+ || 樱花 || http://img.kaixin001.com.cn//i2/house/garden/crop2/yinghua.swf || 50 || 
+ || 西瓜 || http://img.kaixin001.com.cn//i2/house/garden/crop/xigua.swf || 13 || 
+ || 玫瑰 || http://img.kaixin001.com.cn//i2/house/garden/crop/meiguihua.swf || 14 || 
+ || 康乃馨 || http://img.kaixin001.com.cn//i2/house/garden/crop3/kangnaixin.swf || 59 || 
+ || 菠萝 || http://img.kaixin001.com.cn//i2/house/garden/crop2/boluo.swf || 52 || 
+ || 草莓 || http://img.kaixin001.com.cn//i2/house/garden/crop/caomei.swf || 15 || 
+ || 仙人掌 || http://img.kaixin001.com.cn//i2/house/garden/crop/xianrenzhang.swf || 26 || 
+ || 石榴 || http://img.kaixin001.com.cn//i2/house/garden/crop3/shiliu.swf || 58 || 
+ || 菊花 || http://img.kaixin001.com.cn//i2/house/garden/crop/juhua1.swf || 16 || 
+ || 南瓜 || http://img.kaixin001.com.cn//i2/house/garden/crop/nangua.swf || 28 || 
+ || 芒果 || http://img.kaixin001.com.cn//i2/house/garden/crop2/mangguo.swf || 53 || 
+ || 椰子 || http://img.kaixin001.com.cn//i2/house/garden/crop2/yezi.swf || 54 || 
+ || 梅花 || http://img.kaixin001.com.cn//i2/house/garden/crop3/meihua.swf || 57 || 
+ || 食人草 || http://img.kaixin001.com.cn//i2/house/garden/crop3/shirencao.swf || 65 || 
+ || 葡萄 || http://img.kaixin001.com.cn//i2/house/garden/crop3/putao.swf || 60 || 
+ || 神秘玫瑰 || http://img.kaixin001.com.cn//i2/house/garden/crop/meigui_by.swf || 17 || 
+ || 人参果 || http://img.kaixin001.com.cn//i2/house/garden/crop/renshenguo.swf || 18 || 
+ || 牡丹 || http://img.kaixin001.com.cn//i2/house/garden/crop1/mudan_0.swf || 19 || 
+ || 郁金香 || http://img.kaixin001.com.cn//i2/house/garden/crop1/yujinxiang_red.swf || 42 || 
+ || 百合 || http://img.kaixin001.com.cn//i2/house/garden/crop2/lily.swf || 20 || 
+ || 雪莲 || http://img.kaixin001.com.cn//i2/house/garden/crop/xuelian.swf || 23 || 
+ || 灵芝 || http://img.kaixin001.com.cn//i2/house/garden/crop/lingzhi.swf || 24 || 
+ || 冬虫夏草 || http://img.kaixin001.com.cn//i2/house/garden/crop2/dongchongxiacao.swf || 22 || 
+ || 人参 || http://img.kaixin001.com.cn//i2/house/garden/crop/renshen.swf || 21 || 
+ || 友谊花 || http://img.kaixin001.com.cn//i2/house/garden/crop3/youyihua.swf || 61 || 
+ || 爱情果 || http://img.kaixin001.com.cn//i2/house/garden/crop1/love.png || 39 || 
