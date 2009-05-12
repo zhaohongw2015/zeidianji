@@ -1,3 +1,4 @@
+#labels Featured,Phase-Support
  || 小白菊 || http://img.kaixin001.com.cn//i2/house/garden/crop3/xiaobaiju.swf || 67 || 
  || 牧草 || http://img.kaixin001.com.cn//i2/house/garden/crop3/gouweiba.swf || 63 || 
  || 水稻 || http://img.kaixin001.com.cn//i2/house/garden/crop1/shuidao.swf || 36 || 
