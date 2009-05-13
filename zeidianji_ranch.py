@@ -132,19 +132,9 @@ def getTagText(root, tag):
 
 
 hostname=""
-def isMature(info,farm_info,seedid):
-    return True
-    if seedid in seedid_blacklist: #黑名单上的不偷
-        return False 
-    if(info.find("已偷")>0):  #已偷完,已偷光
+def couldSteal(info):
+    if(info.find("距下次可偷")>0):  #距下次可偷还有x小时
         return False
-    if(info.find("可偷")>0):  #再过X小时可偷
-        return False
-    if(farm_info.find("爱心地")>0): #爱心地
-        if(farm_info.find(hostname)>0):
-            return True
-        else:
-            return False
     if(info.find("剩余")>0):
         return True
     else:
@@ -222,7 +212,7 @@ def havest(uid,document):
         import random
         r=random.random()
         
-        if (True):
+        if (couldSteal(tips)):
             print "下手..."           
             req = urllib2.Request((host+url),pdata)
             f = urllib2.urlopen(req)
@@ -270,8 +260,11 @@ for friend in (friends):
     result=havest(uid,document)
     stat_all+=result[1]
     stat_succ+=result[2]
-stat_fail=stat_all-stat_succ
-print '共下手%d次,得手%d次,失手%d次。得手率：%d%%' % (stat_all,stat_succ,stat_fail,(stat_succ*100/stat_all))
+if stat_all>0:
+    stat_fail=stat_all-stat_succ
+    print '共下手%d次,得手%d次,失手%d次。得手率：%d%%' % (stat_all,stat_succ,stat_fail,(stat_succ*100/stat_all))
+else:
+    print '今天没生意可做'
 os.system("pause")
 
 
