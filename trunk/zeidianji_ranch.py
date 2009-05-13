@@ -71,7 +71,7 @@ l=line.split(',')
 l1=l[1]
 param=l1[2:-1]  #remove ' at two ends
 print param
-#param='verify=13814301_1062_13814301_1241615280_1f83fcd2117fd3aca6bbe7da595cf4c0&wwwhost=www.kaixin001.com&roomid=8710&roomsnum=2&fuid=0'
+#param='verify=82793720_1062_82793720_1241615280_1f83fcd2117fd3aca6bbe7da595cf4c0&wwwhost=www.kaixin001.com&roomid=8710&roomsnum=2&fuid=0'
 
 #取得主人id
 hostid=param[param.find('='):param.find('_')]
@@ -84,7 +84,7 @@ for p in plist:
     pdict[pair[0]]=pair[1]
 
 #getconf function
-#GET /!house/!ranch//getconf.php?verify=13814301_1062_13814301_1242081918_ecf6481b89582a415655bfaad82442a7&fuid=0&r=0.4403355401009321 HTTP/1.1
+#GET /!house/!ranch//getconf.php?verify=82793720_1062_82793720_1242081918_ecf6481b89582a415655bfaad82442a7&fuid=0&r=0.4403355401009321 HTTP/1.1
 
 def getConf(uid):
     #print param
@@ -104,7 +104,7 @@ def getConf(uid):
 
 
 #04 get host's conf
-#GET /!house/!garden/getconf.php?verify=13814301_1062_13814301_1241617242_a02655ab7ab200ed717c3c307b22c30a&fuid=0&r=0.034257106482982635 HTTP/1.1
+#GET /!house/!garden/getconf.php?verify=82793720_1062_82793720_1241617242_a02655ab7ab200ed717c3c307b22c30a&fuid=0&r=0.034257106482982635 HTTP/1.1
 url="/!house/!ranch//getconf.php?"+param
 req = urllib2.Request(url=host+url)
 f = urllib2.urlopen(req)
@@ -154,7 +154,7 @@ seedid  0
 fuid    1023378
 skey    sow
 foodnum 1
-verify  13814301_1062_13814301_1242081918_ecf6481b89582a415655bfaad82442a7
+verify  82793720_1062_82793720_1242081918_ecf6481b89582a415655bfaad82442a7
 type    1
 r   0.5469534718431532
 '''
@@ -166,7 +166,7 @@ seedid	0
 fuid	6200159
 skey	hen
 foodnum	1
-verify	13814301_1062_13814301_1242109445_27f6ab66fdbbb2ee24b619bcd81bb89f
+verify	82793720_1062_82793720_1242109445_27f6ab66fdbbb2ee24b619bcd81bb89f
 type	1
 r	0.17008780455216765
 
@@ -175,7 +175,7 @@ seedid	0
 fuid	10203908
 skey	hen
 foodnum	1
-verify	13814301_1062_13814301_1242113554_9e5b489b7111b9810900b0447cecbe0d
+verify	82793720_1062_82793720_1242113554_9e5b489b7111b9810900b0447cecbe0d
 type	0
 r	0.648234830237925
 '''
@@ -236,7 +236,7 @@ hostname=havest(0,document)[0]
 
 
 #查看谁家的菜熟了
-#GET http://www.kaixin001.com/!house/!ranch//getfriendproduct2.php?verify=13814301_1062_13814301_1242093186_1c4eb3a4db323370e09d0b85aaf86fcf&r=0.2629546015523374
+#GET http://www.kaixin001.com/!house/!ranch//getfriendproduct2.php?verify=82793720_1062_82793720_1242093186_1c4eb3a4db323370e09d0b85aaf86fcf&r=0.2629546015523374
 
 url="/!house/!ranch//getfriendproduct2.php?"+param
 import random
@@ -271,7 +271,7 @@ os.system("pause")
 
 '''
 #POST http://www.kaixin001.com/house/garden/friend_ajax.php
-#verify 13814301_1062_13814301_1241712870_736ebb3ad5a6f64f8f1564cad3887b63
+#verify 82793720_1062_82793720_1241712870_736ebb3ad5a6f64f8f1564cad3887b63
 #fuid   0
 #r  99589709
 def getNeighbour(uid):
