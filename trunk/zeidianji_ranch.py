@@ -135,10 +135,7 @@ hostname=""
 def couldSteal(info):
     if(info.find("距下次可偷")>0):  #距下次可偷还有x小时
         return False
-    if(info.find("剩余")>0):
-        return True
-    else:
-        return False
+    return True
 
 import re
 def removeTag(xmlstr):
